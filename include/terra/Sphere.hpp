@@ -119,7 +119,7 @@ ecefToGeod(
 template<typename T, typename Coord>
 inline
 void
-geodToECEF(
+geodToECEFSoA(
 	Coord * const TERRA_RESTRICT toECEF,
 	Coord const & TERRA_RESTRICT fromGeodetic,
 	unsigned const numCoords,
@@ -139,7 +139,7 @@ geodToECEF(
 template<typename T, typename Coord, typename Coord2>
 inline
 void
-geodToECEF(
+geodToECEFAoS(
 	Coord * const TERRA_RESTRICT toECEF,
 	Coord2 const & TERRA_RESTRICT fromGeodetic,
 	unsigned const numCoords,
@@ -158,7 +158,7 @@ geodToECEF(
 template<typename T, typename Coord>
 inline
 void
-ecefToGeod(
+ecefToGeodSoA(
 	Coord * const TERRA_RESTRICT toGeodetic,
 	Coord const & TERRA_RESTRICT fromECEF,
 	unsigned const numCoords,
@@ -178,7 +178,7 @@ ecefToGeod(
 template<typename T, typename Coord, typename Coord2>
 inline
 void
-ecefToGeod(
+ecefToGeodAoS(
 	Coord * const TERRA_RESTRICT toGeodetic,
 	Coord2 const * TERRA_RESTRICT fromECEF,
 	unsigned const numCoords,
