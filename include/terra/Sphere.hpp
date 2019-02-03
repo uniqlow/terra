@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Jon Olsson <jlo@wintermute.net>
+ * Copyright (c) 2017-2019 Jon Olsson <jlo@wintermute.net>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
