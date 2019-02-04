@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Jon Olsson <jlo@wintermute.net>
+ * Copyright (c) 2017-2019 Jon Olsson <jlo@wintermute.net>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -28,9 +28,9 @@ geodToECEF(
 {
 	assert(coord && "coord is nullptr");
 
-	auto const a = ellipsoid.major;
+	auto const a = ellipsoid.semiMajor;
 	auto const a2 = a*a;
-	auto const b = ellipsoid.minor;
+	auto const b = ellipsoid.semiMinor;
 	auto const b2 = b*b;
 
 	auto const lon = (*coord)[0];
@@ -57,9 +57,9 @@ geodToECEF(
 {
 	assert(toECEF && "toECEF is nullptr");
 
-	auto const a = ellipsoid.major;
+	auto const a = ellipsoid.semiMajor;
 	auto const a2 = a*a;
-	auto const b = ellipsoid.minor;
+	auto const b = ellipsoid.semiMinor;
 	auto const b2 = b*b;
 
 	auto const lon = fromGeodetic[0];
@@ -85,9 +85,9 @@ ecefToGeod(
 {
 	assert(coord && "coord is nullptr");
 
-	auto const a = ellipsoid.major;
+	auto const a = ellipsoid.semiMajor;
 	auto const a2 = a*a;
-	auto const b = ellipsoid.minor;
+	auto const b = ellipsoid.semiMinor;
 	auto const b2 = b*b;
 	auto const e = std::sqrt((a2 - b2)/a2);
 	auto const e2 = e*e;
@@ -125,9 +125,9 @@ ecefToGeod(
 {
 	assert(toGeodetic && "toGeodetic is nullptr");
 
-	auto const a = ellipsoid.major;
+	auto const a = ellipsoid.semiMajor;
 	auto const a2 = a*a;
-	auto const b = ellipsoid.minor;
+	auto const b = ellipsoid.semiMinor;
 	auto const b2 = b*b;
 	auto const e = std::sqrt((a2 - b2)/a2);
 	auto const e2 = e*e;
@@ -166,9 +166,9 @@ geodToECEFSoA(
 {
 	assert(toECEF && "toECEF is nullptr");
 
-	auto const a = ellipsoid.major;
+	auto const a = ellipsoid.semiMajor;
 	auto const a2 = a*a;
-	auto const b = ellipsoid.minor;
+	auto const b = ellipsoid.semiMinor;
 	auto const b2 = b*b;
 
 	for (auto i = 0u; i < numCoords; ++i) {
@@ -198,9 +198,9 @@ geodToECEFAoS(
 {
 	assert(toECEF && "toECEF is nullptr");
 
-	auto const a = ellipsoid.major;
+	auto const a = ellipsoid.semiMajor;
 	auto const a2 = a*a;
-	auto const b = ellipsoid.minor;
+	auto const b = ellipsoid.semiMinor;
 	auto const b2 = b*b;
 
 	for (auto i = 0u; i < numCoords; ++i) {
@@ -230,9 +230,9 @@ ecefToGeodSoA(
 {
 	assert(toGeodetic && "toGeodetic is nullptr");
 
-	auto const a = ellipsoid.major;
+	auto const a = ellipsoid.semiMajor;
 	auto const a2 = a*a;
-	auto const b = ellipsoid.minor;
+	auto const b = ellipsoid.semiMinor;
 	auto const b2 = b*b;
 	auto const e = std::sqrt((a2 - b2)/a2);
 	auto const e2 = e*e;
@@ -274,9 +274,9 @@ ecefToGeodAoS(
 {
 	assert(toGeodetic && "toGeodetic is nullptr");
 
-	auto const a = ellipsoid.major;
+	auto const a = ellipsoid.semiMajor;
 	auto const a2 = a*a;
-	auto const b = ellipsoid.minor;
+	auto const b = ellipsoid.semiMinor;
 	auto const b2 = b*b;
 	auto const e = std::sqrt((a2 - b2)/a2);
 	auto const e2 = e*e;

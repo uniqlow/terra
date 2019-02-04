@@ -29,9 +29,9 @@ namespace terra {
  */
 template<typename T>
 struct Ellipsoid {
-	Ellipsoid(T const a, T const i) : major(a), minor(i) {}
-	T major;	/**< The semi-major axis. */
-	T minor;	/**< The semi-major axis. */
+	Ellipsoid(T const ma, T const mi) : semiMajor(ma), semiMinor(mi) {}
+	T semiMajor;	/**< The semi-major axis. */
+	T semiMinor;	/**< The semi-major axis. */
 };
 
 /**
