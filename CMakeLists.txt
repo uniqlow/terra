@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.4 FATAL_ERROR)
 
 project("terra" CXX)
+set(CMAKE_CXX_STANDARD 11)
 
 option(TERRA_TEST "Build tests" OFF)
 
